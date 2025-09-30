@@ -153,36 +153,59 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Contact form handling
+// Contact form handling for Formspree
 document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contact-form');
     
     if (contactForm) {
+        // Check if this is a success page (Formspree redirect)
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('success') === 'true') {
+            showSuccessMessage();
+        }
+        
         contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            if (validateForm(this)) {
-                // Show success message
-                const successMessage = document.createElement('div');
-                successMessage.className = 'success-message';
-                successMessage.innerHTML = `
-                    <div style="background: #00d4ff; color: white; padding: 1rem; border-radius: 10px; margin-top: 1rem; text-align: center;">
-                        <i class="fas fa-check-circle" style="margin-right: 0.5rem;"></i>
-                        Thank you! Your message has been sent successfully.
-                    </div>
-                `;
-                
-                this.appendChild(successMessage);
-                this.reset();
-                
-                // Remove success message after 5 seconds
-                setTimeout(() => {
-                    successMessage.remove();
-                }, 5000);
+            // Validate form before submission
+            if (!validateForm(this)) {
+                e.preventDefault();
+                return false;
             }
+            
+            // Show loading state
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalText = submitButton.innerHTML;
+            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 0.5rem;"></i>Sending...';
+            submitButton.disabled = true;
+            
+            // Let Formspree handle the submission
+            // The form will submit normally to Formspree
         });
     }
 });
+
+function showSuccessMessage() {
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        const successMessage = document.createElement('div');
+        successMessage.className = 'success-message';
+        successMessage.innerHTML = `
+            <div style="background: #00d4ff; color: white; padding: 1rem; border-radius: 10px; margin-top: 1rem; text-align: center;">
+                <i class="fas fa-check-circle" style="margin-right: 0.5rem;"></i>
+                Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.
+            </div>
+        `;
+        
+        contactForm.appendChild(successMessage);
+        
+        // Remove success message after 10 seconds
+        setTimeout(() => {
+            successMessage.remove();
+        }, 10000);
+        
+        // Scroll to the success message
+        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+}
 
 // Loading animation
 window.addEventListener('load', function() {

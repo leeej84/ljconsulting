@@ -26,16 +26,6 @@
             </div>
             
             <div class="footer-section">
-                <h4 class="footer-subtitle">Services</h4>
-                <ul class="footer-links">
-                    <li><a href="{{ '/services/microsoft' | relative_url }}">Microsoft Products</a></li>
-                    <li><a href="{{ '/services/azure' | relative_url }}">Azure Cloud</a></li>
-                    <li><a href="{{ '/services/infrastructure' | relative_url }}">Infrastructure</a></li>
-                    <li><a href="{{ '/services/security' | relative_url }}">Security Solutions</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
                 <h4 class="footer-subtitle">Company</h4>
                 <ul class="footer-links">
                     <li><a href="{{ '/about' | relative_url }}">About Us</a></li>
@@ -47,8 +37,8 @@
             <div class="footer-section">
                 <h4 class="footer-subtitle">Contact Info</h4>
                 <div class="contact-info">
-                    <p><i class="fas fa-envelope"></i> {{ site.email }}</p>
-                    <p><i class="fas fa-globe"></i> {{ site.url }}</p>
+                    <p><i class="fas fa-envelope"></i><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+                    <p><i class="fas fa-globe"></i><a href="{{ site.url }}">{{ site.url }}</a></p>
                 </div>
             </div>
         </div>

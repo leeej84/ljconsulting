@@ -36,7 +36,12 @@ permalink: /contact/
             
             <div class="card">
                 <h3 class="card-title" style="text-align: center; margin-bottom: 2rem;">Send us a Message</h3>
-                <form id="contact-form" style="max-width: 600px; margin: 0 auto;">
+                <form id="contact-form" action="https://formspree.io/f/xnngdrlg" method="POST" style="max-width: 600px; margin: 0 auto;">
+                    <!-- Hidden fields for Formspree -->
+                    <input type="hidden" name="_subject" value="New Contact Form Submission from LJ Consulting Website" />
+                    <input type="hidden" name="_next" value="https://ljconsulting.uk/contact/?success=true" />
+                    <input type="hidden" name="_captcha" value="false" />
+                    
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
                         <div>
                             <label for="firstName" style="display: block; margin-bottom: 0.5rem; color: var(--text-primary);">First Name *</label>
