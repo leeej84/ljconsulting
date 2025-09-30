@@ -9,6 +9,11 @@ url: "https://le-consulting.com" # the base hostname & protocol for your site
 markdown: kramdown
 highlighter: rouge
 theme: minima
+
+# Sass configuration
+sass:
+  style: compressed
+  sass_dir: assets
 plugins:
   - jekyll-feed
   - jekyll-sitemap

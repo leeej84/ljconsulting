@@ -29,7 +29,7 @@ jobs:
     
     - name: Build Jekyll site
       run: |
-        bundle exec jekyll build --baseurl "${{ github.base_ref == 'main' && '' || format('/{0}', github.ref_name) }}"
+        bundle exec jekyll build --baseurl "${{ github.base_ref == 'main' && '' || format('/{0}', github.ref_name) }}" 2> >(grep -v "DEPRECATION WARNING" >&2)
     
     - name: Upload Pages artifact
       if: github.ref == 'refs/heads/main'

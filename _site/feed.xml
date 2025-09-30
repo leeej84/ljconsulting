@@ -3,12 +3,12 @@
   <channel>
     <title>LJ Consulting</title>
     <description>Expert Microsoft &amp; Azure consulting services with a unique view of virtual computing. Specializing in cloud migrations, Microsoft 365, security solutions, and enterprise infrastructure. Trusted by 500+ businesses for reliable IT solutions.</description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <link>https://le-consulting.com/</link>
+    <atom:link href="https://le-consulting.com/feed.xml" rel="self" type="application/rss+xml"/>
     <language>en</language>
     <managingEditor>info@le-consulting.com (LJ Consulting)</managingEditor>
     <webMaster>info@le-consulting.com (LJ Consulting)</webMaster>
-    <lastBuildDate>Tue, 30 Sep 2025 11:10:19 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 30 Sep 2025 16:02:21 +0000</lastBuildDate>
     
   </channel>
 </rss>
