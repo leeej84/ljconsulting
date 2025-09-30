@@ -21,7 +21,7 @@ jobs:
     
     - name: Build Jekyll site
       run: |
-        bundle exec jekyll build --baseurl "${{ github.base_ref == 'main' && '' || '/${{ github.ref_name }}' }}"
+        bundle exec jekyll build --baseurl "${{ github.base_ref == 'main' && '' || '/' + github.ref_name }}"
     
     - name: Deploy to GitHub Pages
       if: github.ref == 'refs/heads/main'
