@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {%- seo title=false -%}
+    <title>{% if page.title %}{{ page.title | escape }} - {% endif %}{{ site.title | escape }}{% unless page.title %} - {{ site.description | escape }}{% endunless %}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/fonts/stylesheet.css' | relative_url }}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.0/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.ico' | relative_url }}?v=2">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/images/favicon-16x16.png' | relative_url }}?v=2">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/images/favicon-32x32.png' | relative_url }}?v=2">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/apple-touch-icon.png' | relative_url }}?v=2">
+    <link rel="shortcut icon" href="{{ '/assets/images/favicon.ico' | relative_url }}?v=2">
+    <link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
+    <meta name="msapplication-TileImage" content="{{ '/assets/images/apple-touch-icon.png' | relative_url }}?v=2">
+    <meta name="msapplication-TileColor" content="#F97316">
+    <meta name="theme-color" content="#F97316">
+    {%- feed_meta -%}
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "{{ site.title | escape }}",
+      "description": "{{ site.description | escape }}",
+      "url": "{{ site.url }}{{ site.baseurl }}",
+      "logo": "{{ site.url }}{{ site.baseurl }}/assets/images/logo.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-555-012-3456",
+        "contactType": "customer service",
+        "email": "{{ site.email }}"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "US"
+      },
+      "sameAs": [
+        "https://github.com/ljconsulting",
+        "https://linkedin.com/in/ljconsulting",
+        "https://twitter.com/ljconsulting"
+      ],
+      "serviceType": "IT Consulting",
+      "areaServed": "Worldwide"
+    }
+    </script>
+    {%- if jekyll.environment == 'production' and site.google_analytics -%}
+        {%- include google-analytics.html -%}
+    {%- endif -%}
+</head>
+<body>
+    <div class="page-wrapper">
+        {%- include header.html -%}
+        
+        <main class="main-content">
+            {{ content }}
+        </main>
+        
+        {%- include footer.html -%}
+    </div>
+    
+    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
+</html>

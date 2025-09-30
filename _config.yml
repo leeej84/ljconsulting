@@ -1,0 +1,87 @@
+# Site settings
+title: "LJ Consulting"
+description: "Expert Microsoft & Azure consulting services with a unique view of virtual computing. Specializing in cloud migrations, Microsoft 365, security solutions, and enterprise infrastructure. Trusted by 500+ businesses for reliable IT solutions."
+email: "info@le-consulting.com"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://le-consulting.com" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /:categories/:year/:month/:day/:title/
+  services:
+    output: true
+    permalink: /services/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "LJ Consulting"
+  - scope:
+      path: ""
+      type: "services"
+    values:
+      layout: "service"
+
+# Navigation
+navigation:
+  - title: "Home"
+    url: "/"
+  - title: "Services"
+    url: "/services/"
+  - title: "About"
+    url: "/about/"
+  # - title: "Blog"
+  #   url: "/blog/"
+  - title: "Contact"
+    url: "/contact/"
+
+# Author information for SEO
+author:
+  name: "LJ Consulting"
+  twitter: ljconsulting
+  image: "logo.png"
+
+# Social media
+twitter:
+  username: ljconsulting
+  card: summary_large_image
+
+social:
+  name: "LJ Consulting"
+  links:
+    - https://github.com/ljconsulting
+    - https://linkedin.com/in/ljconsulting
+    - https://twitter.com/ljconsulting
+
+# SEO and metadata
+lang: en
+timezone: UTC
+
+# Google Analytics (add your tracking ID when ready)
+# google_analytics: UA-XXXXXXXXX-X
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md

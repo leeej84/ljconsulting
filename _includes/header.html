@@ -1,0 +1,35 @@
+<header class="site-header">
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="{{ '/' | relative_url }}" class="logo-link">
+                    <div class="logo-image">
+                        <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="LJ Consulting Logo" class="logo-img">
+                    </div>
+                    <div class="logo-text-container">
+                        <span class="logo-text">LJ</span>
+                        <span class="logo-suffix">Consulting</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    {%- for item in site.navigation -%}
+                    <li class="nav-item">
+                        <a href="{{ item.url | relative_url }}" class="nav-link{% if page.url == item.url %} active{% endif %}">
+                            {{ item.title }}
+                        </a>
+                    </li>
+                    {%- endfor -%}
+                </ul>
+            </div>
+            
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+</header>

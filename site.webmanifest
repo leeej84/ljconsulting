@@ -1,0 +1,26 @@
+{
+    "name": "LJ Consulting",
+    "short_name": "LJ Consulting",
+    "description": "Expert Microsoft & Azure consulting services with a unique view of virtual computing",
+    "icons": [
+        {
+            "src": "/assets/images/favicon-16x16.png?v=2",
+            "sizes": "16x16",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/favicon-32x32.png?v=2",
+            "sizes": "32x32",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/apple-touch-icon.png?v=2",
+            "sizes": "180x180",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#F97316",
+    "background_color": "#1F2937",
+    "display": "standalone",
+    "start_url": "/"
+}

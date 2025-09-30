@@ -1,0 +1,264 @@
+---
+layout: default
+---
+
+<article class="post">
+    <header class="post-header">
+        <div class="container">
+            <h1 class="post-title">{{ page.title }}</h1>
+            <div class="post-meta">
+                <span class="post-date">
+                    <i class="fas fa-calendar"></i>
+                    {{ page.date | date: "%B %d, %Y" }}
+                </span>
+                {% if page.author %}
+                <span class="post-author">
+                    <i class="fas fa-user"></i>
+                    {{ page.author }}
+                </span>
+                {% endif %}
+                {% if page.categories %}
+                <span class="post-categories">
+                    <i class="fas fa-tags"></i>
+                    {{ page.categories | join: ', ' }}
+                </span>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+    
+    <div class="post-content">
+        <div class="container">
+            <div class="post-body">
+                {{ content }}
+            </div>
+        </div>
+    </div>
+    
+    <footer class="post-footer">
+        <div class="container">
+            <div class="post-navigation">
+                {% if page.previous.url %}
+                <a href="{{ page.previous.url | relative_url }}" class="nav-previous">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>{{ page.previous.title }}</span>
+                </a>
+                {% endif %}
+                
+                {% if page.next.url %}
+                <a href="{{ page.next.url | relative_url }}" class="nav-next">
+                    <span>{{ page.next.title }}</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                {% endif %}
+            </div>
+            
+            <div class="post-actions">
+                <a href="{{ '/blog' | relative_url }}" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Blog
+                </a>
+                <a href="{{ '/contact' | relative_url }}" class="btn btn-primary">
+                    Get In Touch
+                </a>
+            </div>
+        </div>
+    </footer>
+</article>
+
+<style>
+.post {
+    padding-top: 100px;
+}
+
+.post-header {
+    background: var(--card-bg);
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.post-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.post-meta {
+    display: flex;
+    gap: 2rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+}
+
+.post-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.post-content {
+    padding: 3rem 0;
+}
+
+.post-body {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.post-body h1,
+.post-body h2,
+.post-body h3,
+.post-body h4,
+.post-body h5,
+.post-body h6 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.post-body h2 {
+    font-size: 2rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+
+.post-body h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.post-body p {
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+}
+
+.post-body ul,
+.post-body ol {
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+}
+
+.post-body li {
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.post-body blockquote {
+    border-left: 4px solid var(--primary-color);
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+    color: var(--text-muted);
+}
+
+.post-body code {
+    background: var(--card-bg);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    color: var(--primary-color);
+}
+
+.post-body pre {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 10px;
+    overflow-x: auto;
+    margin: 2rem 0;
+    border: 1px solid var(--border-color);
+}
+
+.post-body pre code {
+    background: none;
+    padding: 0;
+    color: var(--text-primary);
+}
+
+.post-footer {
+    background: var(--card-bg);
+    padding: 3rem 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.post-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    gap: 2rem;
+}
+
+.nav-previous,
+.nav-next {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 1.5rem;
+    background: var(--darker-bg);
+    border-radius: 10px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: var(--transition-fast);
+    border: 1px solid var(--border-color);
+    flex: 1;
+    max-width: 300px;
+}
+
+.nav-previous:hover,
+.nav-next:hover {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.nav-previous {
+    text-align: left;
+}
+
+.nav-next {
+    text-align: right;
+    flex-direction: row-reverse;
+}
+
+.post-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .post-title {
+        font-size: 2rem;
+    }
+    
+    .post-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .post-navigation {
+        flex-direction: column;
+    }
+    
+    .nav-previous,
+    .nav-next {
+        max-width: none;
+    }
+    
+    .post-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+</style>
