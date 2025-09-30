@@ -1,9 +1,9 @@
 # Site settings
 title: "LJ Consulting"
 description: "Expert Microsoft & Azure consulting services with a unique view of virtual computing. Specializing in cloud migrations, Microsoft 365, security solutions, and enterprise infrastructure. Trusted by 500+ businesses for reliable IT solutions."
-email: "info@le-consulting.com"
+email: "info@ljconsulting.uk"
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://le-consulting.com" # the base hostname & protocol for your site
+url: "https://ljconsulting.uk" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
@@ -14,10 +14,6 @@ theme: minima
 sass:
   style: compressed
   sass_dir: assets
-
-# Include custom CSS
-include:
-  - assets/css/custom.css
 plugins:
   - jekyll-feed
   - jekyll-sitemap

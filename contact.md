@@ -29,7 +29,7 @@ permalink: /contact/
                     </div>
                     <h3 class="card-title">Call Us</h3>
                     <p class="card-description">
-                        <a href="tel:+1-555-0123">+1 (555) 012-3456</a>
+                        <a href="tel:+44123351500">01233 51500</a>
                     </p>
                 </div>
             </div>
