@@ -1,0 +1,14 @@
+/* Custom CSS to override Minima theme styles */
+/* This avoids Sass deprecation warnings by using pure CSS */
+
+/* Override any problematic color functions with CSS custom properties */
+:root {
+  --grey-color: #828282;
+  --grey-color-light: #b3b3b3;
+  --grey-color-dark: #5a5a5a;
+  --text-color: #111111;
+  --background-color: #ffffff;
+  --brand-color: #2a7ae2;
+}
+
+/* Add any custom styles here */
