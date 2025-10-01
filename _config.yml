@@ -78,7 +78,7 @@ lang: en
 timezone: UTC
 
 # Google Analytics (add your tracking ID when ready)
-# google_analytics: UA-XXXXXXXXX-X
+google_analytics: G-9Z2E1SR13Z
 
 # Exclude from processing
 exclude:
